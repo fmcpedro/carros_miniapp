@@ -1,0 +1,199 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Carro
+ */
+class Carro
+{
+    /**
+     * @var string
+     */
+    private $cilindrada;
+
+    /**
+     * @var string
+     */
+    private $dataVenda;
+
+    /**
+     * @var string
+     */
+    private $observacoes;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Combustivel
+     */
+    private $combustivel;
+
+    /**
+     * @var \AppBundle\Entity\Cor
+     */
+    private $cor;
+
+    /**
+     * @var \AppBundle\Entity\Modelo
+     */
+    private $modelo;
+
+
+    /**
+     * Set cilindrada
+     *
+     * @param string $cilindrada
+     *
+     * @return Carro
+     */
+    public function setCilindrada($cilindrada)
+    {
+        $this->cilindrada = $cilindrada;
+
+        return $this;
+    }
+
+    /**
+     * Get cilindrada
+     *
+     * @return string
+     */
+    public function getCilindrada()
+    {
+        return $this->cilindrada;
+    }
+
+    /**
+     * Set dataVenda
+     *
+     * @param string $dataVenda
+     *
+     * @return Carro
+     */
+    public function setDataVenda($dataVenda)
+    {
+        $this->dataVenda = $dataVenda;
+
+        return $this;
+    }
+
+    /**
+     * Get dataVenda
+     *
+     * @return string
+     */
+    public function getDataVenda()
+    {
+        return $this->dataVenda;
+    }
+
+    /**
+     * Set observacoes
+     *
+     * @param string $observacoes
+     *
+     * @return Carro
+     */
+    public function setObservacoes($observacoes)
+    {
+        $this->observacoes = $observacoes;
+
+        return $this;
+    }
+
+    /**
+     * Get observacoes
+     *
+     * @return string
+     */
+    public function getObservacoes()
+    {
+        return $this->observacoes;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set combustivel
+     *
+     * @param \AppBundle\Entity\Combustivel $combustivel
+     *
+     * @return Carro
+     */
+    public function setCombustivel(\AppBundle\Entity\Combustivel $combustivel = null)
+    {
+        $this->combustivel = $combustivel;
+
+        return $this;
+    }
+
+    /**
+     * Get combustivel
+     *
+     * @return \AppBundle\Entity\Combustivel
+     */
+    public function getCombustivel()
+    {
+        return $this->combustivel;
+    }
+
+    /**
+     * Set cor
+     *
+     * @param \AppBundle\Entity\Cor $cor
+     *
+     * @return Carro
+     */
+    public function setCor(\AppBundle\Entity\Cor $cor = null)
+    {
+        $this->cor = $cor;
+
+        return $this;
+    }
+
+    /**
+     * Get cor
+     *
+     * @return \AppBundle\Entity\Cor
+     */
+    public function getCor()
+    {
+        return $this->cor;
+    }
+
+    /**
+     * Set modelo
+     *
+     * @param \AppBundle\Entity\Modelo $modelo
+     *
+     * @return Carro
+     */
+    public function setModelo(\AppBundle\Entity\Modelo $modelo = null)
+    {
+        $this->modelo = $modelo;
+
+        return $this;
+    }
+
+    /**
+     * Get modelo
+     *
+     * @return \AppBundle\Entity\Modelo
+     */
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+}

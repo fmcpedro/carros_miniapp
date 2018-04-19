@@ -1,0 +1,141 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Modelo
+ */
+class Modelo
+{
+    /**
+     * @var string
+     */
+    private $nome;
+
+    /**
+     * @var string
+     */
+    private $dataInicioFabrico;
+
+    /**
+     * @var string
+     */
+    private $dataFimFabrico;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Marca
+     */
+    private $marca;
+
+
+    /**
+     * Set nome
+     *
+     * @param string $nome
+     *
+     * @return Modelo
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get nome
+     *
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set dataInicioFabrico
+     *
+     * @param string $dataInicioFabrico
+     *
+     * @return Modelo
+     */
+    public function setDataInicioFabrico($dataInicioFabrico)
+    {
+        $this->dataInicioFabrico = $dataInicioFabrico;
+
+        return $this;
+    }
+
+    /**
+     * Get dataInicioFabrico
+     *
+     * @return string
+     */
+    public function getDataInicioFabrico()
+    {
+        return $this->dataInicioFabrico;
+    }
+
+    /**
+     * Set dataFimFabrico
+     *
+     * @param string $dataFimFabrico
+     *
+     * @return Modelo
+     */
+    public function setDataFimFabrico($dataFimFabrico)
+    {
+        $this->dataFimFabrico = $dataFimFabrico;
+
+        return $this;
+    }
+
+    /**
+     * Get dataFimFabrico
+     *
+     * @return string
+     */
+    public function getDataFimFabrico()
+    {
+        return $this->dataFimFabrico;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set marca
+     *
+     * @param \AppBundle\Entity\Marca $marca
+     *
+     * @return Modelo
+     */
+    public function setMarca(\AppBundle\Entity\Marca $marca = null)
+    {
+        $this->marca = $marca;
+
+        return $this;
+    }
+
+    /**
+     * Get marca
+     *
+     * @return \AppBundle\Entity\Marca
+     */
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+}
