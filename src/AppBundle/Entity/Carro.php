@@ -2,7 +2,11 @@
 
 namespace AppBundle\Entity;
 
+<<<<<<< HEAD
 //te afghsgdfetregdv
+=======
+//test fsdsdfdd
+>>>>>>> 41efaccee1b6f1cf575980a139c78b197fb47cbf
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
