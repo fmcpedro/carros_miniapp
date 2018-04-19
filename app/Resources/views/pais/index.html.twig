@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pais list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pais in pais %}
+            <tr>
+                <td><a href="{{ path('pais_show', { 'id': pais.id }) }}">{{ pais.nome }}</a></td>
+                <td>{{ pais.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pais_show', { 'id': pais.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pais_edit', { 'id': pais.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pais_new') }}">Create a new pai</a>
+        </li>
+    </ul>
+{% endblock %}

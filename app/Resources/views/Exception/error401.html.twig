@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Erro 401</h1>
+
+    <p>
+        Para efetuar esta operação precisa de estar autenticado. Registe a sua conta ou 
+         <a href="{{ path('homepage') }}">volte à pagina inicial.</a>.
+    </p>
+{% endblock %}

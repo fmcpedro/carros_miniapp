@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Modelo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nome</th>
+                <td>{{ modelo.nome }}</td>
+            </tr>
+            <tr>
+                <th>Datainiciofabrico</th>
+                <td>{{ modelo.dataInicioFabrico|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Datafimfabrico</th>
+                <td>{{ modelo.dataFimFabrico|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ modelo.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('modelo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('modelo_edit', { 'id': modelo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

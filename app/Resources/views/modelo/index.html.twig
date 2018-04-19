@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Listagem de Modelos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                
+                <th>Data de inicio de fabrico</th>
+                <th>Data de fim de fabrico</th>
+                <th>Lista de Carros(Cilindrada)</th>
+                <th>Lista de Carros (Combustivel)</th>
+                <th>Lista de Carros (Observações)</th>
+            <!--    <th>Id</th> -->
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        {% for modelo in modelos %}
+                 
+            <tr>
+             <!--   <td><a href="{{ path('modelo_show', { 'id': modelo.id }) }}">{{ modelo.nome }}</a></td> -->
+                
+                <td><center>{{ modelo.nome }}</center></td>
+                <td><center>{{ modelo.marca.nome }}</center></td>
+                <td><center>{{ modelo.dataInicioFabrico|date('d-m-Y') }}</center></td>
+                <td><center>{{ modelo.dataFimFabrico|date('d-m-Y') }}</center></td>
+               
+                    <!-- listagem de carros por modelo -->
+                    {% for carro in modelo.carros %}
+                        <td><center>{{ carro.cilindrada }}</center></td>
+                        <td><center>{{ carro.combustivel }}</center></td>
+                        <td><center>{{ carro.observacoes }}</center></td>
+                    {% endfor %}
+                   <!-- listagem de carros por modelo -->
+
+
+
+
+              <!--  <td>{{ modelo.id }}</td> -->
+                      
+                <td>
+                    <ul>
+                       <!-- <li>
+                            <a href="{{ path('modelo_show', { 'id': modelo.id }) }}">show</a>
+                        </li>
+                        <li> -->
+                            <a href="{{ path('modelo_edit', { 'id': modelo.id }) }}">editar modelo</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+       
+         {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('modelo_new') }}">Criar novo modelo</a>
+        </li>
+    </ul>
+{% endblock %}
+       

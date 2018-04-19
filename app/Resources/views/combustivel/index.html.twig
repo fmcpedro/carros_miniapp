@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Combustivels list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for combustivel in combustivels %}
+            <tr>
+                <td><a href="{{ path('combustivel_show', { 'id': combustivel.id }) }}">{{ combustivel.nome }}</a></td>
+                <td>{{ combustivel.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('combustivel_show', { 'id': combustivel.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('combustivel_edit', { 'id': combustivel.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('combustivel_new') }}">Create a new combustivel</a>
+        </li>
+    </ul>
+{% endblock %}

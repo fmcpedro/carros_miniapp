@@ -1,0 +1,24 @@
+marca_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Marca:index" }
+    methods:  GET
+
+marca_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Marca:show" }
+    methods:  GET
+
+marca_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Marca:new" }
+    methods:  [GET, POST]
+
+marca_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Marca:edit" }
+    methods:  [GET, POST]
+
+marca_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Marca:delete" }
+    methods:  DELETE

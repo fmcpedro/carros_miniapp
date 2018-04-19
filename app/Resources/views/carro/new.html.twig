@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Carro creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Criar" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('user_list_carros') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,5 @@
+<!-- src/Acme/DemoBundle/Resources/config/vich_uploader/Entity.Product.xml -->
+<!-- Attributes "mapping", "name" and "filename_property" are required -->
+<vich_uploader class="App\AppBundle\Entity\Carro">
+    <field mapping="carro_image" name="image" filename_property="imageName"/>
+</vich_uploader>

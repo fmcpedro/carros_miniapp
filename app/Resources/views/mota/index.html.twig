@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Listagem de Motas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Peso</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Cor</th>
+                <th>Num. rodas</th>
+              <!--  <th>Id</th> -->
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mota in motas %}
+            <tr>
+              <!--  <td><a href="{{ path('mota_show', { 'id': mota.id }) }}">{{ mota.peso }}</a></td> -->
+                <td><center>{{ mota.peso }}</center></td>
+                <td><center>{{ mota.modelo }}</center></td>
+                <td><center>{{ mota.modelo.marca }}</center></td>
+                <td><center>{{ mota.cor }}</center></td>
+                
+                <td><center>{{ mota.numerorodas }}</center></td>
+               <!-- <td>{{ mota.id }}</td> -->
+                <td>
+                    <ul>
+                       <!-- <li>
+                            <a href="{{ path('mota_show', { 'id': mota.id }) }}">show</a>
+                        </li> -->
+                        <li>
+                            <a href="{{ path('mota_edit', { 'id': mota.id }) }}">editar mota</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- <ul>
+        <li>
+            <a href="{{ path('mota_new') }}">Create a new mota</a>
+        </li>
+    </ul> -->
+{% endblock %}

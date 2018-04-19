@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Listagem de Carros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Cilindrada</th>
+                <th>Data de venda</th>
+                <th>Observações</th>
+                <th>Modelo</th>
+                <th>Combustível</th>
+                <th>Marca</th>
+                <th>Imagem</th>
+               <!-- <th>Id</th> -->
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carro in carros %}
+            <tr>
+               <!-- <td><a href="{{ path('carro_show', { 'id': carro.id }) }}">{{ carro.cilindrada }}</a></td> -->
+                <td><center>{{carro.cilindrada}}
+                <td><center>{{carro.dataVenda|date('d-m-Y') }}</center></td>
+                <td><center>{{carro.observacoes }}</center></td>
+                <td><center>{{carro.modelo}}</center></td>
+                <td><center>{{carro.combustivel}}</center> </td>
+                <td><center>{{carro.modelo.marca}}</center></td>
+                {% set runtimeConfig = {"thumbnail": {"size": [50, 50] }} %}
+                <td><img src="{{ vich_uploader_asset(carro, 'imageFile') }}" alt="{{ carro.imageFile }}" /></center></td>
+
+
+                <td>
+                    <ul>
+                       <!-- <li>
+                            <a href="{{ path('carro_show', { 'id': carro.id }) }}">show</a>
+                        </li> -->
+                        <li>
+                            <a href="{{ path('carro_edit', { 'id': carro.id }) }}">Editar car</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <!-- <ul>
+        <li>
+            <a href="{{ path('carro_new') }}">Create a new car</a>
+        </li>
+    </ul> -->
+{% endblock %}

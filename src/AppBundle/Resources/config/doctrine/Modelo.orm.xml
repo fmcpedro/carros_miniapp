@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Modelo" table="Modelo">
+    <indexes>
+      <index name="fk_Modelo_Marca1_idx" columns="marca_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nome" type="string" column="nome" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dataInicioFabrico" type="datetime" column="data_inicio_fabrico" length="150" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dataFimFabrico" type="datetime" column="data_fim_fabrico" length="150" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+   
+    <many-to-one field="marca" target-entity="Marca" fetch="LAZY" inversedBy="modelos" nullable="false" >
+      <join-columns>
+        <join-column name="marca_id" referenced-column-name="id" nullable="false" inversedBy="modelos"/>
+      </join-columns>
+    </many-to-one>
+    
+    <one-to-many field="carros" target-entity="Carro" mapped-by="modelo">
+    </one-to-many>
+    
+  </entity>
+</doctrine-mapping>

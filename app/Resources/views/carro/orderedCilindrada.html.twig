@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <h1>{% trans %}Listagem de Carros (ordenados por cilindrada){% endtrans %}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{% trans %}Cilindrada{% endtrans %}</th>
+                <th>{% trans %}Data de venda{% endtrans %}</th>
+                <th>{% trans %}Observações{% endtrans %}</th>
+                <th>{% trans %}Modelo{% endtrans %}</th>
+                <th>{% trans %}Combustível{% endtrans %}</th>
+                <th>{% trans %}Marca{% endtrans %}</th>
+               <!-- <th>Id</th> -->
+                <th>{% trans %}Opções{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carro in carros %}
+            <tr>
+               <!-- <td><a href="{{ path('carro_show', { 'id': carro.id }) }}">{{ carro.cilindrada }}</a></td> -->
+                <td><center>{{carro.cilindrada}}
+                <td><center>{{carro.dataVenda|date('d-m-Y') }}</center></td>
+                <td><center>{{carro.observacoes }}</center></td>
+                <td><center>{{carro.modelo}}</center></td>
+                <td><center>{{carro.combustivel}}</center> </td>
+                <td><center>{{carro.modelo.marca}}</center></td>
+                
+
+                <td>
+                    <ul>
+                       <!-- <li>
+                            <a href="{{ path('carro_show', { 'id': carro.id }) }}">show</a>
+                        </li> -->
+                        <li>
+                            <a href="{{ path('carro_edit', { 'id': carro.id }) }}">{% trans %}editar carro{% endtrans %}
+                        </li></a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <!-- <ul>
+        <li>
+            <a href="{{ path('carro_new') }}">Criar um novo carro</a>
+        </li>
+    </ul> -->
+{% endblock %}

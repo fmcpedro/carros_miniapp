@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Carro" table="Carro" repository-class="AppBundle\Repository\CarroRepository">
+    <indexes>
+      <index name="fk_Carro_Modelo1_idx" columns="modelo_id"/>
+      <index name="fk_Carro_Cor1_idx" columns="cor_id"/>
+      <index name="fk_Carro_Combustivel1_idx" columns="combustivel_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cilindrada" type="string" column="cilindrada" length="150" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dataVenda" type="datetime" column="data_venda" length="150" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="observacoes" type="string" column="observacoes" length="500" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    
+    <field name="imageName" type="string" column="imagename" length="500" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    
+    
+        <many-to-one field="user" target-entity="User" fetch="LAZY">
+      <join-columns>
+        <join-column name="user_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    
+    
+    <many-to-one field="combustivel" target-entity="Combustivel" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="combustivel_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cor" target-entity="Cor" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="cor_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="modelo" target-entity="Modelo" fetch="LAZY" nullable="false" inversed-by="carros">
+      <join-columns>
+        <join-column name="modelo_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Mota" table="Mota">
+    <indexes>
+      <index name="fk_Mota_Modelo1_idx" columns="modelo_id"/>
+      <index name="fk_Mota_Cor1_idx" columns="cor_id"/>
+      <index name="fk_Mota_Combustivel1_idx" columns="combustivel_id"/>
+      <index name="fk_Mota_NumeroRodas1_idx" columns="numerorodas_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="peso" type="float" column="peso" precision="10" scale="0" nullable="false"/>
+
+    <many-to-one field="combustivel" target-entity="Combustivel" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="combustivel_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cor" target-entity="Cor" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="cor_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="modelo" target-entity="Modelo" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="modelo_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="numerorodas" target-entity="Numerorodas" fetch="LAZY" nullable="false">
+      <join-columns>
+        <join-column name="numerorodas_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

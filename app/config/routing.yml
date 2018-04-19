@@ -1,0 +1,259 @@
+app_admin_carro:
+    resource: "@AppBundle/Resources/config/routing/carro.yml"
+    prefix: /carro
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+carros_ordered:
+    path: /carro_ordered
+    controller: AppBundle:Carro:listaCarrosOrderedCilindrada
+
+carros_ordered:
+    path: /{_locale}/carro_ordered
+    controller: AppBundle:Carro:listaCarrosOrderedCilindrada
+    requirements:
+        _locale: pt|en
+
+
+##app:
+##    resource: '@AppBundle/Controller/'
+##    type: annotation
+#
+#_liip_imagine:
+#    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+#
+##carros_ordered:
+##    path: /carro_ordered
+##    controller: AppBundle:Carro:listaCarrosOrderedCilindrada
+#
+#fos_user_security:
+#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+#
+#fos_user_profile:
+#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    prefix: /profile
+#
+#fos_user_register:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    prefix: /register
+#
+#fos_user_resetting:
+#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+#    prefix: /resetting
+#
+#fos_user_change_password:
+#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+#    prefix: /profile
+#
+#
+##user_list_carros:
+##    path: /list-carros
+##    controller: AppBundle:User:listCarros
+##    
+##admin_list_carros:
+##    path: /admin
+##    controller: AppBundle:Carro:index 
+#    
+#    
+#    
+#user_edit_carro:
+#    path: /carro_edit/{id}
+#    controller: AppBundle:Carro:edit
+#   
+#
+#
+#carros_ordered:
+#    path: /{_locale}/carro_ordered
+#    controller: AppBundle:Carro:listaCarrosOrderedCilindrada
+#    requirements:
+#        _locale: pt|en
+#
+#carro_index:
+#    path: /carro_index
+#    controller: AppBundle:Carro:index
+#    
+#carro_show:
+#    path: /carro_show/{id}
+#    controller: AppBundle:Carro:show
+#  
+#carro_new:
+#    path: /carro_new
+#    controller: AppBundle:Carro:new
+#      
+#carro_edit:
+#    path: /carro_edit/{id}
+#    controller: AppBundle:Carro:edit
+#  
+#carro_delete:
+#    path: /carro_delete/{id}
+#    controller: AppBundle:Carro:delete
+#    
+#
+#    
+#combustivel_index:
+#    path: /combustivel_index
+#    controller: AppBundle:Combustivel:index    
+#    
+#combustivel_show:
+#    path: /combustivel_show/{id}
+#    controller: AppBundle:Combustivel:show
+#  
+#combustivel_new:
+#    path: /combustivel_new
+#    controller: AppBundle:Combustivel:new
+#      
+#combustivel_edit:
+#    path: /combustivel_edit/{id}
+#    controller: AppBundle:Combustivel:edit
+#  
+#combustivel_delete:
+#    path: /combustivel_delete/{id}
+#    controller: AppBundle:Combustivel:delete
+#    
+#
+#    
+#    
+#cor_index:
+#    path: /cor_index
+#    controller: AppBundle:Cor:index    
+#    
+#cor_show:
+#    path: /cor_show/{id}
+#    controller: AppBundle:Cor:show
+#  
+#cor_new:
+#    path: /cor_new
+#    controller: AppBundle:Cor:new
+#      
+#cor_edit:
+#    path: /cor_edit/{id}
+#    controller: AppBundle:Cor:edit
+#  
+#cor_delete:
+#    path: /cor_delete/{id}
+#    controller: AppBundle:Cor:delete    
+#    
+# 
+# 
+# 
+# 
+# 
+#marca_index:
+#    path: /marca_index
+#    controller: AppBundle:Marca:index
+#    
+#marca_show:
+#    path: /marca_show/{id}
+#    controller: AppBundle:Marca:show
+#  
+#marca_new:
+#    path: /marca_new
+#    controller: AppBundle:Marca:new
+#      
+#marca_edit:
+#    path: /marca_edit/{id}
+#    controller: AppBundle:Marca:edit
+#  
+#marca_delete:
+#    path: /marca_delete/{id}
+#    controller: AppBundle:Marca:delete     
+#
+#    
+#    
+#    
+#    
+#modelo_index:
+#    path: /modelo_index
+#    controller: AppBundle:Modelo:index
+#    
+#modelo_show:
+#    path: /modelo_show/{id}
+#    controller: AppBundle:Modelo:show
+#  
+#modelo_new:
+#    path: /modelo_new
+#    controller: AppBundle:Modelo:new
+#      
+#modelo_edit:
+#    path: /modelo_edit/{id}
+#    controller: AppBundle:Modelo:edit
+#  
+#modelo_delete:
+#    path: /modelo_delete/{id}
+#    controller: AppBundle:Modelo:delete     
+#    
+#    
+#    
+#    
+#    
+#    
+#
+#mota_index:
+#    path: /mota_index
+#    controller: AppBundle:Mota:index
+#    
+#mota_show:
+#    path: /mota_show/{id}
+#    controller: AppBundle:Mota:show
+#  
+#mota_new:
+#    path: /mota_new
+#    controller: AppBundle:Mota:new
+#      
+#mota_edit:
+#    path: /mota_edit/{id}
+#    controller: AppBundle:Mota:edit
+#  
+#mota_delete:
+#    path: /mota_delete/{id}
+#    controller: AppBundle:Mota:delete
+#    
+#
+#
+#numerorodas_index:
+#    path: /numerorodas_index
+#    controller: AppBundle:Numerorodas:index
+#    
+#numerorodas_show:
+#    path: /numerorodas_show/{id}
+#    controller: AppBundle:Numerorodas:show
+#  
+#numerorodas_new:
+#    path: /numerorodas_new
+#    controller: AppBundle:Numerorodas:new
+#      
+#numerorodas_edit:
+#    path: /numerorodas_edit/{id}
+#    controller: AppBundle:Numerorodas:edit
+#  
+#numerorodas_delete:
+#    path: /numerorodas_delete/{id}
+#    controller: AppBundle:Numerorodas:delete    
+#    
+#
+#    
+#    
+#    
+#pais_index:
+#    path: /pais_index
+#    controller: AppBundle:Pais:index
+#    
+#pais_show:
+#    path: /pais_show/{id}
+#    controller: AppBundle:Pais:show
+#  
+#pais_new:
+#    path: /pais_new
+#    controller: AppBundle:Pais:new
+#      
+#pais_edit:
+#    path: /pais_edit/{id}
+#    controller: AppBundle:Pais:edit
+#  
+#pais_delete:
+#    path: /pais_delete/{id}
+#    controller: AppBundle:Pais:delete 

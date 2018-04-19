@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Numerorodas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Numerorodascol</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for numeroroda in numerorodas %}
+            <tr>
+                <td><a href="{{ path('numerorodas_show', { 'id': numeroroda.id }) }}">{{ numeroroda.numerorodascol }}</a></td>
+                <td>{{ numeroroda.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('numerorodas_show', { 'id': numeroroda.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('numerorodas_edit', { 'id': numeroroda.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('numerorodas_new') }}">Create a new numeroroda</a>
+        </li>
+    </ul>
+{% endblock %}

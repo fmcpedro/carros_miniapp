@@ -1,0 +1,24 @@
+mota_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Mota:index" }
+    methods:  GET
+
+mota_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Mota:show" }
+    methods:  GET
+
+mota_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Mota:new" }
+    methods:  [GET, POST]
+
+mota_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Mota:edit" }
+    methods:  [GET, POST]
+
+mota_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Mota:delete" }
+    methods:  DELETE

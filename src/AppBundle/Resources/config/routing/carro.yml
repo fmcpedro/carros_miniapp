@@ -1,0 +1,28 @@
+user_list_carros:
+    path: /list-carros
+    controller: AppBundle:User:listCarros
+
+carro_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Carro:index" }
+    methods:  GET
+
+carro_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Carro:show" }
+    methods:  GET
+
+carro_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Carro:new" }
+    methods:  [GET, POST]
+
+carro_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Carro:edit" }
+    methods:  [GET, POST]
+
+carro_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Carro:delete" }
+    methods:  DELETE

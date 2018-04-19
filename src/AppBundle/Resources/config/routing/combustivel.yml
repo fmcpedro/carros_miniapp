@@ -1,0 +1,24 @@
+combustivel_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Combustivel:index" }
+    methods:  GET
+
+combustivel_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Combustivel:show" }
+    methods:  GET
+
+combustivel_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Combustivel:new" }
+    methods:  [GET, POST]
+
+combustivel_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Combustivel:edit" }
+    methods:  [GET, POST]
+
+combustivel_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Combustivel:delete" }
+    methods:  DELETE
