@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -75,3 +76,7 @@ Enjoy!
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
 [15]: https://symfony.com/doc/current/setup.html
+=======
+# carros_miniapp
+Simulador de Gestão de Carros
+>>>>>>> ac98ca15eb6f15a365809f4de841bf397679e378
